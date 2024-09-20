@@ -1,0 +1,108 @@
+.landingpage{
+   border: none;
+   height: 100vh;
+   width: 100%;
+   background:linear-gradient(rgba(0, 0, 0, 0.34),rgba(0, 0, 0, 0.683)) ,url('../images/bg_landing.png') no-repeat right;
+   background-size: cover;
+   position: fixed;
+}
+.landingpage .login-container{
+    padding: 3vh;
+    box-shadow: rgba(255, 255, 255, 0.137) ;
+    background: rgba(255, 255, 255, 0.377);
+    border-radius: 1rem;
+    width: 30%;
+    margin: 10vh auto;
+}
+.landingpage .btn-container{
+    position: relative;
+    margin: 3vh auto;
+    height: 10vh;
+    width: 80%;
+    border-radius: 10vh;
+    
+}
+/* btn top */
+.landingpage .btn-container .btntop{
+    position:absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.landingpage .btn-container .btntop button{
+    height: 100%;
+    width: 50%;
+    transition: all .5s;
+    font-size: 4vh;
+}
+
+.landingpage .btntop .user-btn{
+    background: linear-gradient(to right ,rgb(55, 55, 233) 70%,rgba(255, 255, 255, 0.87));
+    border: transparent;
+    margin: 0%;
+    border-radius:10vh 0vh 0vh 10vh;
+}
+.landingpage .btntop .admin-btn{
+    background: linear-gradient(to right ,white,crimson 70%);
+    border: transparent;
+    margin-left: 50%;
+    border-radius:0 10vh 10vh 0;
+}
+/* btn back */
+.btnback{
+    border-radius: 10vh;
+    box-shadow:inset 0 0 5vh rgba(40, 8, 8, 0.678);
+    height: 100%;
+    width: 100%;
+}
+.btnback button{
+    font-size: x-large;
+    color: white;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    width: 50%;
+}
+ /* admin-form */
+.form-container{
+    margin: auto;
+    width: 90%;
+    padding: .01vh 0vh;
+}
+.form-container .heading{
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    font-size: 5vh;
+}
+.form-container input , .form-container button{
+    display: block;
+    margin:5vh auto;
+    height: 5vh;
+    text-align: center;
+    background: transparent;
+}
+.form-container input {
+    width: 50%;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.form-container input::placeholder{
+    color: rgb(36, 19, 19);
+    font-weight: bolder;
+}
+.form-container input:focus{
+    outline: none;
+}
+.form-container button{
+    font-weight: 900;
+    border: none;
+    width: 40%;
+    border-radius: 10vh;
+    background-color: blue;
+    color: white;
+}
+.form-container button:hover{
+    background-color:  white;
+    color: black;
+}

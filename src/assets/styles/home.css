@@ -1,0 +1,22 @@
+.homepage{
+    height: 90vh;width: 100%;
+    background: url('../images/homebg.jpg') no-repeat center;
+    background-size: cover;
+}
+.homepage .container{
+    border: .5vh dotted white;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width:30%;
+    background-color: rgb(234, 190, 133);
+    box-shadow: inset 0 0 2vh white;
+    border-radius: 5vh;
+}
+.container p{
+    color: crimson;
+    padding: 2vh;
+    font-size: 7vh;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

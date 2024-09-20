@@ -1,0 +1,43 @@
+.books{
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: auto auto ;
+    row-gap: 10vh;
+    justify-content: space-evenly;
+}
+.books .cards{
+    display: flex;
+    box-shadow: 0 0 5vh burlywood;
+    height: 40vh;
+    width: 40vw;
+}
+.books .image{
+    height: 100%;
+    width: 40%;
+    text-align: center;
+}
+.books .image img{
+    width: 60%;
+    margin:10% 10% 10% 10%;   
+}
+.books .image h2{
+    text-align: center;
+}
+.books .details{
+    height: 100%;
+    width: 60%;
+}
+.books .details table tr th{
+    width: 30%;
+    text-align: left;
+}
+.books .details table tr th #center{
+    text-align: end;
+}
+.books .details table tr th,td{
+    padding: .4vh;
+  
+}
+.books .details .btns{
+    border: 1px solid red;
+}
