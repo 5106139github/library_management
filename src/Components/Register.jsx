@@ -69,9 +69,8 @@ let handlesubmit = (e) => {
                 <input type="password" placeholder="Enter password" required/>
                 <input type="text" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" required/>
                 <input type="text" placeholder="Enter place" required/>
-                <button>REGISTER</button>
-                <Link to='/'><button>login</button></Link>
-
+                  <button>REGISTER</button><br />
+                <Link to='/'><h1>Back</h1></Link>
             </form>
         </div>
     </div>

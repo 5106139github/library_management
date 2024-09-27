@@ -1,8 +1,32 @@
 .homepage{
     height: 90vh;width: 100%;
-    background: url('../images/homebg.avif') no-repeat left;
+    background:linear-gradient(rgba(0, 0, 0, 0.441),rgba(0, 0, 0, 0.523)) ,url('../images/homebg.avif') no-repeat left;
     background-size: cover;
 }
+.homepage .msg{
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    /* background-color: blue; */
+}
+span{
+    color: white;
+}
+.homepage .msg h1{
+    color: red;
+    text-shadow: 1vh 1vh 2vh  white;
+    margin: auto;
+   
+}
+.homepage .msg h1 span{
+    animation: blinker .5s linear infinite;
+}
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 .homepage .container{
     /* border: .5vh dotted white; */
     position: absolute;

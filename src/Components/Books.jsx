@@ -3,11 +3,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../assets/styles/books.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Addbooks from '../Components/admin/Addbooks'
 
 
 const Books = () => {
+  let deletebutton = useLocation().pathname;
+  let bool = deletebutton.startsWith('/adminportal')
+  
   const [books, setbooks] = useState();
   
   useEffect(() => {
@@ -90,7 +93,7 @@ const Books = () => {
                   </table>
                   <div className="btns">
                     <button onClick={()=>readbook(id)}>Read Book</button>
-                    <button onClick={()=>handledelete(id,title)}>Delete</button>
+                    {bool ? <button onClick={()=>handledelete(id,title)}>Delete</button> : ''}
                   </div>
                 </div>
               </div>

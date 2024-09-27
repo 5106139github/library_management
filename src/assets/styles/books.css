@@ -1,6 +1,4 @@
-.booksbg{
- background-color: white !important;
-} 
+
 .books {
   padding-top: 10vh;
   margin-bottom: 5vh;
@@ -11,6 +9,7 @@
 }
 
 .books .cards {
+  background-color: aliceblue;
   overflow: hidden;
   display: flex;
   padding: 1%;
