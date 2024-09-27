@@ -1,22 +1,36 @@
 .homepage{
     height: 90vh;width: 100%;
-    background: url('../images/homebg.jpg') no-repeat center;
+    background: url('../images/homebg.avif') no-repeat left;
     background-size: cover;
 }
 .homepage .container{
-    border: .5vh dotted white;
+    /* border: .5vh dotted white; */
     position: absolute;
-    top: 40%;
-    left: 10%;
-    width:30%;
-    background-color: rgb(234, 190, 133);
-    box-shadow: inset 0 0 2vh white;
+    top: 61%;
+    left: 35%;
+    background-color: rgba(190, 180, 168, 0.1);
+    box-shadow: inset 0 0 2vh rgb(237, 182, 182);
     border-radius: 5vh;
 }
 .container p{
-    color: crimson;
+    color: rgb(138, 4, 31);
     padding: 2vh;
-    font-size: 7vh;
+    font-size: 4vh;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.horse{
+    position: absolute;
+    top: 31%;
+    left: 30%;
+}
+.horse1{
+    position: absolute;
+    top: 31%;
+    left: 40%;
+}
+.horse2{
+    position: absolute;
+    top: 31%;
+    left: 50%;
 }

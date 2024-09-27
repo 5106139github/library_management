@@ -1,0 +1,38 @@
+.userscontsiner{
+   margin: 5% 0%;
+}
+.users-table{
+    width: 70%;
+    margin:auto;
+    padding: 2%;
+    border-radius: 5vh;
+    box-shadow: inset 0 0 10vh burlywood;
+}
+.userscontsiner .users-table table{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.userscontsiner .users-table table thead th{
+    font : caption ;
+    text-transform: capitalize;
+    color: red;
+    width: 10%;
+    font-weight: bold;
+    text-align: center;
+}
+.userscontsiner .users-table table tbody td{
+    width: 10%;
+    font-size: .8rem;
+    text-align: center;
+}
+.userscontsiner .users-table tbody button{
+    text-align: center;
+    border: none;
+    padding:5% 10%;
+    box-shadow: inset 0 0 2vh red;
+    font-weight: bolder;
+    border-radius: 10px;
+} 
+
+

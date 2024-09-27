@@ -1,0 +1,1 @@
+export const JSON_url = 'http://localhost:4000/'

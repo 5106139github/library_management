@@ -1,6 +1,6 @@
 
 import { useRef } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Adminlogin = () => {
@@ -16,11 +16,12 @@ const Adminlogin = () => {
         let pwdinput = pwdfield.current
         let credentials = {
             email : 'admin@gmail.com',
-            password : 'admin123'
+            password : '12345'
         }
         let {email,password} = credentials
 
         // todo : condition to visit admin portal
+        
         if(emailinput.value === email && pwdinput.value === password){
             navigate('/adminportal')
         }
@@ -38,6 +39,7 @@ const Adminlogin = () => {
      <input ref={emailfield} type="email" placeholder='Enter email address' />
      <input ref={pwdfield} type="text" placeholder='Enter password'/>
      <button>Admin login</button>
+    <p> ? data is secured ? <Link to='/register'>Register as User</Link></p>
    </form>
  </div>
  </>

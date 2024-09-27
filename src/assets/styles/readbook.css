@@ -1,0 +1,93 @@
+.readbook {
+    border: none;
+    width: 80%;
+    height: 70vh;
+    margin: 10vh auto;
+    display: flex;
+    box-shadow: inset 1px 1px 10px rgb(234, 190, 133);
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, rgb(234, 190, 133) 50%, white 50%);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.read1 {
+    margin: auto;
+    position: sticky;
+    top: 0;
+    left: 2%;
+    border: none;
+    width: 30%;
+    height: 90%;
+    text-align: center;
+
+}
+.read1 h2,.read2 h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+}
+
+.read1 img {
+    width: 60%;
+    height: 60%;
+    margin: 8vh auto;
+}
+
+.read2 {
+    margin: 10vh auto;
+    border: none;
+    width: 70%;
+    height: 100;
+    text-align: center;
+
+}
+
+.read2 button {
+    padding: 1% 3%;
+    margin: 3% auto;
+    width: 60%;
+    justify-content: space-between;
+    box-shadow: inset 0 0 2vh rgb(234, 190, 133);
+    border-radius: 10px;
+    border: none;
+}
+.dec{
+    margin:1% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    font-weight: bolder;
+    font-size:larger;
+}
+
+.read2 .classobj {
+    border: none;
+    height: 28%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+}
+.read2 .descbox{
+    scrollbar-width: none;
+    overflow: scroll;
+    height: 13vw;
+    text-align: left;
+}
+
+.read2 .classobj .box {
+    border: none;
+    height: 70%;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: inset 1px 1px 10px blue;
+    border-radius: 20px;
+}
+
+.backbtn button{
+    box-shadow:inset 0 0 2vh red;
+    font-weight: bolder;
+    color: black;
+   width: 10%;
+}

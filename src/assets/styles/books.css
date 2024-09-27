@@ -1,43 +1,84 @@
-.books{
-    margin-top: 10vh;
-    display: grid;
-    grid-template-columns: auto auto ;
-    row-gap: 10vh;
-    justify-content: space-evenly;
+.booksbg{
+ background-color: white !important;
+} 
+.books {
+  padding-top: 10vh;
+  margin-bottom: 5vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 10vh;
+  justify-content: space-evenly;
 }
-.books .cards{
-    display: flex;
-    box-shadow: 0 0 5vh burlywood;
-    height: 40vh;
-    width: 40vw;
+
+.books .cards {
+  overflow: hidden;
+  display: flex;
+  padding: 1%;
+  border-radius: 10%;
+  box-shadow: inset 0 0 5vh burlywood;
+  width: 30vw;
 }
-.books .image{
-    height: 100%;
+.books .image {
+  height: 100%;
+  width: 40%;
+  text-align: center;
+}
+
+.books .image img {
+  border-radius: 5vh;
+  width: 80%;
+  width: 80%;
+  margin: 10% 10% 10% 10%;
+}
+
+.books .image h4 {
+  color: red;
+  text-align: center;
+}
+
+.books .details {
+  height: 100%;
+  width: 60%;
+}
+
+.details p {
+    height: 10%;
+    margin:5% 0 0 0 ;
+  color: red;
+  font-weight: bold;
+}
+.details table{
+    height: 60%;
+}
+.details table tr th {
+  width: 30%;
+  text-align: left;
+  font-size:small;
+  font-family: "Courier New", Courier, monospace;
+}
+.details table tr td{
+    font-size: small;
+}
+.books .details table tr th,td {
+  padding: 2%;
+}
+.details .btns {
+  display: flex;
+  justify-content: space-around;
+}
+.details .btns button{
+    height: 5vh;
     width: 40%;
-    text-align: center;
+    margin:5% 0 0 0 ;
+    border-radius: 20%;
+    border: none;
+    background: transparent;
+    font-weight: bolder;
 }
-.books .image img{
-    width: 60%;
-    margin:10% 10% 10% 10%;   
+.details .btns button:first-child{
+    box-shadow: inset 0 0 2vh green;
 }
-.books .image h2{
-    text-align: center;
+.details .btns button:nth-child(2){
+    box-shadow: inset 0 0 2vh red;
 }
-.books .details{
-    height: 100%;
-    width: 60%;
-}
-.books .details table tr th{
-    width: 30%;
-    text-align: left;
-}
-.books .details table tr th #center{
-    text-align: end;
-}
-.books .details table tr th,td{
-    padding: .4vh;
-  
-}
-.books .details .btns{
-    border: 1px solid red;
-}
+

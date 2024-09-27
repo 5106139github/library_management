@@ -3,26 +3,51 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../assets/styles/books.css";
+import { useNavigate } from "react-router-dom";
+import Addbooks from '../Components/admin/Addbooks'
+
 
 const Books = () => {
-  const [books, booksData] = useState();
-  let [del, setdel] = useState();
-
-    const handledelete = (no,title) => {
-      alert(`Do you want to delete ${title}`)
-      booksData(books.filter((ele,index) => index+1 !== no))
-    }
-
+  const [books, setbooks] = useState();
+  
   useEffect(() => {
     axios
       .get("http://localhost:4000/books")
-      .then((resp) => booksData(resp.data));
-  }, []);
+      .then((resp) => {
+        setbooks(resp.data)
+        });
+  }, [books]);
+
+
+  let navigate = useNavigate()
+  let readbook = (id) => {
+    navigate(`/adminportal/readbook/${id}`)
+  }
+  
+  // const [delbook, setdelbook] = useState();
+  // const handledelete = (no,title) => {
+  //   alert(`Do you want to delete ${title}`)
+  //   setbooks(books.filter((ele,index) => index+1 !== no))
+  // }
+  let handledelete = (id,title) => {
+   let bool =  window.confirm(`do you want to delete ${title} book`)
+   if(bool){
+    fetch(`http://localhost:4000/books/${id}`,{method : 'DELETE'})
+    alert(`book is deleted`)
+   }
+   else{
+    alert(`${title} is not deleted`)
+   }
+  }
+
+
   return (
     <>
+      <div className="booksbg">
       <div className="books">
         {books && books.map((ele,index) => {
           let {
+            id,
             title,
             isbn,
             pageCount,
@@ -37,10 +62,10 @@ const Books = () => {
               <div className="cards">
                 <div className="image">
                   <img src={thumbnailUrl} alt="loading" />
-                  <h2>{title}</h2>
+                  <h4>{title}</h4>
                 </div>
                 <div className="details">
-                  <h1>{title}</h1>
+                  <p>{title}</p>
                   <table>
                     <tr>
                       <th>PageCount</th>
@@ -64,14 +89,15 @@ const Books = () => {
                     </tr>
                   </table>
                   <div className="btns">
-                    <button>Read Book</button>
-                    <button onClick={() => handledelete(index,title) }>Delete</button>
+                    <button onClick={()=>readbook(id)}>Read Book</button>
+                    <button onClick={()=>handledelete(id,title)}>Delete</button>
                   </div>
                 </div>
               </div>
             </>
           );
         })}
+      </div>
       </div>
     </>
   );
