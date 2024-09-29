@@ -1,13 +1,15 @@
-/* eslint-disable no-unused-vars */
 
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../assets/styles/books.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import Addbooks from '../Components/admin/Addbooks'
+
 
 
 const Books = () => {
+  let readbooks = useLocation().pathname
+  let user = readbooks.startsWith('/adminportal')
+
   let deletebutton = useLocation().pathname;
   let bool = deletebutton.startsWith('/adminportal')
   
@@ -24,7 +26,7 @@ const Books = () => {
 
   let navigate = useNavigate()
   let readbook = (id) => {
-    navigate(`/adminportal/readbook/${id}`)
+    {user ? navigate(`/adminportal/readbook/${id}`) : navigate(`/userportal/readbook/${id}`)}
   }
   
   // const [delbook, setdelbook] = useState();
@@ -48,13 +50,13 @@ const Books = () => {
     <>
       <div className="booksbg">
       <div className="books">
-        {books && books.map((ele,index) => {
+        {books && books.map((ele) => {
           let {
             id,
             title,
             isbn,
             pageCount,
-            publishedDate,
+           
             thumbnailUrl,
             status,
             authors,
@@ -81,6 +83,7 @@ const Books = () => {
                     <tr>
                       <th>Status</th>
                       <td>{status}</td>
+                      
                     </tr>
                     <tr>
                       <th>Author</th>
@@ -91,10 +94,10 @@ const Books = () => {
                       <td>{categories}</td>
                     </tr>
                   </table>
-                  <div className="btns">
-                    <button onClick={()=>readbook(id)}>Read Book</button>
-                    {bool ? <button onClick={()=>handledelete(id,title)}>Delete</button> : ''}
-                  </div>
+                    <div style={{textAlign:'center'}}>
+                    <button id="greenbtn" onClick={()=>readbook(id)}>Read Book</button>
+                    {bool ? <button id="redbtn" onClick={()=>handledelete(id,title)}>Delete</button> : ''}
+                    </div>
                 </div>
               </div>
             </>

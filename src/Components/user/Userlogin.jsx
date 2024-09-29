@@ -33,7 +33,7 @@ const Userlogin = () => {
       }else if(psdinp === password){
         pwdfield.current.style.border = '1px solid red';
       }
-     idfield.current.value = ''
+    //  idfield.current.value = ''
     }
   })
 }

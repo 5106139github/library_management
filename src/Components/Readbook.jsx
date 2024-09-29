@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "../assets/Styles/readbook.css";
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
+import axios from "axios";
 
 const Readbook = () => {
+  let locate = useLocation().pathname.startsWith('/adminportal')
   let params = useParams();
   let bookId = params.id;
   let [book, setBook] = useState({});
@@ -30,8 +32,23 @@ const Readbook = () => {
 
   let navigate = useNavigate()
   let readbook = (id) => {
-    navigate(`/adminportal/books/`)
+    {locate ? navigate(`/adminportal/books/`) : navigate(`/userportal/books/`)}
   }
+  
+let addtocart = () => {
+  let bool = window.confirm(`Do you want to add ${title} book .. ?`)
+  if(bool){
+    fetch('http://localhost:4000/cartitems',{
+      method : 'POST',
+      headers : {'Content-Type' : 'application/json'},
+      body : JSON.stringify(book)
+    })
+    alert('Book is added')
+  }
+  else {
+    alert('Not added')
+  }
+}
 
 
   let {
@@ -92,8 +109,9 @@ const Readbook = () => {
               {categories}
             </div>
           </div>
-          <div className="backbtn" onClick={()=>readbook(id)}><button>back</button></div>
-        </div>
+          <div className="backbtn" ><button onClick={()=>readbook(id)}>back</button>&nbsp;
+          <button className="backbtn" onClick={()=>addtocart()}>Add</button></div></div>
+        
       </div>
     </>
   );

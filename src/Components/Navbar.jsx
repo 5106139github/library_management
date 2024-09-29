@@ -53,7 +53,7 @@ const Navbar = () => {
                 <Link to="/userportal/contact">CONTACT</Link>
               </li>
               <li>
-                <Link>
+                <Link to='/userportal/cart'>
                   <ShoppingCartIcon />
                 </Link>
               </li>

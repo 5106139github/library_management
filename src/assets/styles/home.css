@@ -15,14 +15,12 @@ span{
 .homepage .msg h1{
     color: red;
     text-shadow: 1vh 1vh 2vh  white;
-    margin: auto;
-   
+    margin: auto;  
 }
 .homepage .msg h1 span{
     animation: blinker .5s linear infinite;
 }
-  
-  @keyframes blinker {
+@keyframes blinker {
     50% {
       opacity: 0;
     }

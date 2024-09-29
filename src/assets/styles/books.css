@@ -65,19 +65,25 @@
   display: flex;
   justify-content: space-around;
 }
-.details .btns button{
+#redbtn{
     height: 5vh;
     width: 40%;
-    margin:5% 0 0 0 ;
+    margin:5% 0 0 5% ;
     border-radius: 20%;
     border: none;
     background: transparent;
     font-weight: bolder;
-}
-.details .btns button:first-child{
-    box-shadow: inset 0 0 2vh green;
-}
-.details .btns button:nth-child(2){
     box-shadow: inset 0 0 2vh red;
 }
+#greenbtn{
+  height: 5vh;
+  width: 40%;
+  margin:5% 0 0 0 ;
+  border-radius: 20%;
+  border: none;
+  background: transparent;
+  font-weight: bolder;
+    box-shadow: inset 0 0 2vh green;
+}
+
 

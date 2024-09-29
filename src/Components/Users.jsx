@@ -1,9 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import '../assets/styles/users.css'
+import { useLocation } from "react-router-dom"
 
 
 const Users = () => {
+  let userdeletebutton = useLocation().pathname
+  let bool = userdeletebutton.startsWith('/adminportal')
   let [usersdata,setusersdata] = useState()
 
 
@@ -33,12 +36,12 @@ const Users = () => {
               <th>Sno</th>
               <th>Fname</th>
               <th>Lname</th>  
-              <th>Email</th>
-              <th>Password</th>
-              <th>DOB</th>
+              {bool &&  <th>Email</th>}
+              {bool && <th>Password</th> }
+              {bool && <th>DOB</th>}
               <th>age</th>
               <th>Place</th>
-              <th>Delete Users</th>
+              {bool ? <th>Delete Users</th> : ''}
             </tr>
             {/* <tr>
               <th><button>ADD USERS</button></th>
@@ -48,7 +51,7 @@ const Users = () => {
           <tbody>
             {
               usersdata && usersdata.map((ele,index)=>{
-                let {id,fnm,lnm,email,dob,place} = ele
+                let {id,fnm,lnm,email,password,dob,place} = ele
                 let calage = () => {
                   let age = new Date().getFullYear() - Number(dob.slice(0,4))
                   return age
@@ -62,12 +65,12 @@ const Users = () => {
                       <td>{index+1}</td>
                       <td>{fnm}</td>
                       <td>{lnm}</td>
-                      <td>{email}</td>
-                      <td>💇🏿‍♀️💇🏿💇🏿‍♀️</td>
-                      <td>{dob}</td>
+                      {bool && <td>{email}</td>}
+                      {bool ? <td>{password}</td> : ''}
+                      {bool && <td>{dob}</td>}
                       <td>{age}</td>
                       <td>{place}</td>
-                      <td><button onClick={()=>handledelete(id,fnm)}>DELETE</button></td>
+                      {bool ? <td><button onClick={()=>handledelete(id,fnm)}>DELETE</button></td> : ''}
                     </tr>
                   </>
                 )
