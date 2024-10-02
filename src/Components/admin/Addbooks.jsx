@@ -10,7 +10,8 @@ const Addbooks = () => {
     useEffect(() => {
         const data =   axios
         .get("http://localhost:4000/books").then((resp) => setbooks(resp.data));
-      }, [books]);
+      }, []);
+
       const newid = () => {
             const lid = Number(books[books.length - 1].id);
             return lid+1;                 
@@ -44,6 +45,7 @@ let handlesubmit = (e) => {
         method : 'POST',
         headers : {'Content-Type' : 'application/json'},
         body : JSON.stringify(formdata)
+        
     }) 
     
     refname.current[0].value=""

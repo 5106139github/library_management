@@ -9,11 +9,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Books = () => {
   let readbooks = useLocation().pathname
   let user = readbooks.startsWith('/adminportal')
-
   let deletebutton = useLocation().pathname;
   let bool = deletebutton.startsWith('/adminportal')
   
   const [books, setbooks] = useState();
+
+  let [search , setsearch] = useState()
+
   
   useEffect(() => {
     axios
@@ -49,6 +51,14 @@ const Books = () => {
   return (
     <>
       <div className="booksbg">
+        <input type="text" placeholder="search" value={search} onChange={(tx)=>{setsearch( tx.target.value)}}/> 
+        <button onClick={() => {
+          const updatedSearch = books.filter((res) => 
+            res.title.toLowerCase().includes(search.toLowerCase())
+          );
+            setbooks(updatedSearch)
+          }}>Search</button>
+
       <div className="books">
         {books && books.map((ele) => {
           let {

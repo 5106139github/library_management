@@ -10,6 +10,7 @@ import axios from "axios";
 const Readbook = () => {
   let locate = useLocation().pathname.startsWith('/adminportal')
   let params = useParams();
+  // console.log(params.id);
   let bookId = params.id;
   let [book, setBook] = useState({});
   useEffect(() => {
