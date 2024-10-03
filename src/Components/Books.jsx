@@ -3,10 +3,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "../assets/styles/books.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import {JSON_url} from '../utils/Contents'
 
 
 
 const Books = () => {
+
   let readbooks = useLocation().pathname
   let user = readbooks.startsWith('/adminportal')
   let deletebutton = useLocation().pathname;
@@ -19,7 +21,7 @@ const Books = () => {
   
   useEffect(() => {
     axios
-      .get("http://localhost:4000/books")
+      .get(`${JSON_url}/books`)
       .then((resp) => {
         setbooks(resp.data)
         });
@@ -39,7 +41,7 @@ const Books = () => {
   let handledelete = (id,title) => {
    let bool =  window.confirm(`do you want to delete ${title} book`)
    if(bool){
-    fetch(`http://localhost:4000/books/${id}`,{method : 'DELETE'})
+    fetch(`${JSON_url}/books/${id}`,{method : 'DELETE'})
     alert(`book is deleted`)
    }
    else{

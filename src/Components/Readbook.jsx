@@ -2,10 +2,10 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import "../assets/Styles/readbook.css";
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
+import {JSON_url} from '../utils/Contents'
 
 const Readbook = () => {
   let locate = useLocation().pathname.startsWith('/adminportal')
@@ -15,7 +15,7 @@ const Readbook = () => {
   let [book, setBook] = useState({});
   useEffect(() => {
     let apifetch = async () => {
-      let singlebook = await fetch(`http://localhost:4000/books/${bookId}`);
+      let singlebook = await fetch(`${JSON_url}/books/${bookId}`);
       let resp = await singlebook.json();
       setBook(resp);
     };
@@ -39,7 +39,7 @@ const Readbook = () => {
 let addtocart = () => {
   let bool = window.confirm(`Do you want to add ${title} book .. ?`)
   if(bool){
-    fetch('http://localhost:4000/cartitems',{
+    fetch(`${JSON_url}/cartitems`,{
       method : 'POST',
       headers : {'Content-Type' : 'application/json'},
       body : JSON.stringify(book)

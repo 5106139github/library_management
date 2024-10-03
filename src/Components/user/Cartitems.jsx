@@ -2,21 +2,21 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-
+import { JSON_url } from "../../utils/Contents"
 
 
 const Cartitems = () => {
     let [cart , setcart] = useState('')
 
     useEffect(()=> {
-        axios.get('http://localhost:4000/cartitems').then(ele => setcart(ele.data))
+        axios.get(`${JSON_url}/cartitems`).then(ele => setcart(ele.data))
     },[cart])
     console.log(cart);
     
     let handledelete = (id,title) => {
         let bool =  window.confirm(`do you want to delete ${title} book ...???`)
         if(bool){
-         fetch(`http://localhost:4000/cartitems/${id}`,{method : 'DELETE'})
+         fetch(`${JSON_url}/cartitems/${id}`,{method : 'DELETE'})
          alert(`user is deleted`)
         }
         else{

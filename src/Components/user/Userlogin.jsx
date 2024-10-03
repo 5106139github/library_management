@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { JSON_url } from "../../utils/Contents";
 
 const Userlogin = () => {
   let [user, setUser] = useState([]);
@@ -8,7 +9,7 @@ const Userlogin = () => {
 
   useEffect(() => {
     let fetchapi = async () =>{
-    await axios.get('http://localhost:4000/users').then((res) => setUser(res.data));
+    await axios.get(`${JSON_url}/users`).then((res) => setUser(res.data));
     }
     fetchapi()
   }, [user]);

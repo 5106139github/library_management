@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import '../assets/styles/users.css'
 import { useLocation } from "react-router-dom"
-
+import {JSON_url} from '../utils/Contents'
 
 const Users = () => {
   let userdeletebutton = useLocation().pathname
@@ -11,14 +11,14 @@ const Users = () => {
 
 
   useEffect(()=>{
-    axios.get('http://localhost:4000/users').then((ele)=>setusersdata(ele.data))
+    axios.get(`${JSON_url}/users`).then((ele)=>setusersdata(ele.data))
   },[usersdata])
   
 
   let handledelete = (id,fnm) => {
     let bool =  window.confirm(`do you want to delete ${fnm} user`)
     if(bool){
-     fetch(`http://localhost:4000/users/${id}`,{method : 'DELETE'})
+     fetch(`${JSON_url}/users/${id}`,{method : 'DELETE'})
      alert(`user is deleted`)
     }
     else{

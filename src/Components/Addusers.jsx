@@ -3,13 +3,13 @@
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import {JSON_url} from '../utils/Contents'
 
 const Addusers = () => {
     let [books,setbooks] = useState()
-    
     useEffect(() => {
         const data =   axios
-        .get("http://localhost:4000/users").then((resp) => setbooks(resp.data));
+        .get(`${JSON_url}/users`).then((resp) => setbooks(resp.data));
       }, [books]);
       const newid = () => {
         if (books && books.length > 0) {
@@ -41,7 +41,7 @@ let handlesubmit = (e) => {
     
     
 //! sending data to books component
-    fetch('http://localhost:4000/users',{
+    fetch(`${JSON_url}/users`,{
         method : 'POST',
         headers : {'Content-Type' : 'application/json'},
         body : JSON.stringify(formdata)

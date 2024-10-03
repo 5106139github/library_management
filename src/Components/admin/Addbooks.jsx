@@ -9,7 +9,7 @@ const Addbooks = () => {
     
     useEffect(() => {
         const data =   axios
-        .get("http://localhost:4000/books").then((resp) => setbooks(resp.data));
+        .get(`${JSON_url}/books`).then((resp) => setbooks(resp.data));
       }, []);
 
       const newid = () => {
@@ -41,7 +41,7 @@ let handlesubmit = (e) => {
     
     
 //! sending data to books component
-    fetch('http://localhost:4000/books',{
+    fetch(`${JSON_url}/books`,{
         method : 'POST',
         headers : {'Content-Type' : 'application/json'},
         body : JSON.stringify(formdata)
